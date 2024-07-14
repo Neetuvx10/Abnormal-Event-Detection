@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>|Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link href="/static/css/stylesheet.css" rel="stylesheet">
+
+    <style>
+
+.predict{
+font-size:25px;
+border-radius:15px;
+padding:5px;
+font-family: "Times New Roman", Times, serif;
+}
+.predict:hover{background-color:green;}
+
+label{color:red;}
+
+span{font-size:40px;}
+
+#home{display:block;}
+
+ #cnn, #visual, #accuracy {display:none;}
+
+img{
+box-shadow:2px 2px 2px 3px #AAA;
+}
+
+
+    </style>
+</head>
+<body style="font-family: 'Times New Roman', Times, serif;">
+                    <div class="container-fluid">
+
+           <h1 class="tuber bg-dark">ANOMALY DETECTION</h1><br>
+                        </div>
+
+<div id="buttons" class="btn-group-vertical ">
+<!--    <video height="40%" width="100%" style="margin-top:-30%;margin-left:10px;" loop autoplay muted >-->
+<!--<source src="/static/background/vedio_echo.mp4" type="video/mp4">-->
+<!-- </video><br>-->
+    <div class="right">
+    <a class="side_button" href="/home"><button type="button"  class="btn  ">Testing</button></a>
+     <a class="side_button" href="#"><button type="button" onclick="cnn()" class="btn  ">CNN Graphs</button></a>
+<!--        <a class="side_button" href="#"><button type="button" onclick="accuracy()" class="btn ">Accuracy&Loss Graphs</button></a>-->
+<!--     <a class="side_button" href="#"><button style="padding-left:0px;" type="button" onclick="visual()" class="btn  ">Data Visualization </button></a>-->
+    <a class="side_button" href="/passwordPage"> <button type="button"  class="btn ">Change Password</button></a>
+  <a class="side_button" href="/logout"><button type="button"  id="logout" class="btn ">Logout</button></a>
+</div>
+</div>
+ <br><br><br><br>
+    <div class="content">
+
+        <div id="home" >
+            <center><br><br>
+
+       <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+            <div class="row">
+              <br/>
+               <div class="col">
+                      <div class="form-group" >
+                       <label class="control-label col-sm-2" for="audio">Upload  file :</label><br>
+                      <div class="col-lg-4">
+                      <input type="file"   class="form-control" required placeholder="upload  file.. "  name="audio" id="audio"/><br>
+
+                      </div>
+
+                             <div class="row">
+                <div class="col">
+        <div class="form-group">
+             <div class="col-sm-offset-3 col-sm-8">
+            <button style="width:100px;height:50px;margin-left:-20px;" type="submit" class="btn-success predict">Predict</button>
+            </div>
+            </div>
+                </div>
+            </div>
+                      </div>
+
+                 </div>
+            </div>
+         </form>
+
+           {% if prediction %}
+              <div id="prediction">
+                <img src="\static\temp\_frame0.jpg" height="250px" width="30%"><br>
+        	<h2 class="result">  Prediction   : <span>{{ prediction }}</span> </h2>
+             <h2 class="result" style="margin-top:-10px;">  Probability Score   : <span>{{ acc }} % </span>  </h2>
+              </div>
+	      {% endif %}
+                </center>
+           </div>
+
+                      <div id="cnn"><br><br>
+                    <center>
+                      <h1 class="second-h2" > Result Analysis for CNN Model</h1><br>
+                        <img class=" graphs"  src="/static/graphs/Classfication.png" style=" width:42%;height:55vh;margin:0px 0px 0px 100px;"  alt="">
+                        <img class="matrix graphs"  src="/static/graphs/Confution.png" style=" width:42%;height:55vh;margin-left:50px;"  alt=""><br>
+                    </center>
+                     </div>
+
+                <div id="accuracy">
+                    <center>
+                      <h1 class="second-h2" > Accuracy and Loss Graphs for CNN Model</h1><br>
+                        <img class=" graphs"  src="/static/graphs/accuracy_plot-graph.png" style=" width:40%;height:55vh;margin:0px 0px 0px 50px;"  alt="">
+                        <img class="matrix graphs"  src="/static/graphs/loss_plot=graph.png" style=" width:40%;height:55vh;margin-left:50px;"  alt=""><br>
+                    </center>
+                     </div>
+
+                    <div id="visual"><br>
+                        <center>
+                    <h1 class="second-h2">Visualization Graphs for CNN</h1><br>
+                      <img src="/static/graphs/visual1.png" class="matrix graphs"  style=" width:43%;height:55vh;margin-left:100px;"  alt="">
+                     <img src="/static/graphs/visual2.png" class="matrix graphs" style=" width:43%;height:55vh;margin-left:50px;" alt=""><br><br>
+                             </center>
+                     </div>
+
+                        </div>
+
+<script>
+
+</script>
+  <script src="/static/js/script1.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

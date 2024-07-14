@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>|Register</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="/static/css/stylesheet.css" rel="stylesheet">
+	<style>
+		.error_mail{
+		color:red;
+		}
+
+.content{
+width:100%;
+margin-left:-50px;
+height:80vh;}
+.container{margin-left:20%;
+}
+
+.card{
+height:95%;
+background:rgba(255,255,255,0.2)}
+
+
+	</style>
+</head>
+<body style="background-color:pink;">
+
+
+<h1 class="tuber bg-dark">ANOMALY DETECTION</h1><br><br><br><br><br>
+
+	<div class="content">
+<div class="container">
+<h2 class="text-center"><a href="http://bootstrap-ecommerce.com/"> </a></h2>
+
+<div class="row justify">
+<div class="col-sm-8">
+<div class="card">
+<header class="card-header">
+	<a href="/" class="float-right  btn-outline-primary mt-1">Log in</a>
+	<h4 class="card-title mt-2">Sign up</h4>
+</header>
+<article class="card-body">
+<form method="post">
+	<div class="form-row">
+		<div class="col form-group">
+			<label>Name </label>
+		  	<input type="text" class="form-control" required name="name" placeholder="Enter your name">
+		</div> <!-- form-group end.// -->
+		<div class="col form-group">
+			<label>Age</label>
+		  	<input type="number" class="form-control" required name="age" placeholder="Enter your Age">
+		</div> <!-- form-group end.// -->
+	</div> <!-- form-row end.// -->
+	<div class="form-row">
+	<div class="col form-group">
+		<label>Email address</label>
+		<input type="email" class="form-control" required name="Email" placeholder="Enter your emial id">
+		<h5 class="error_mail">{{msg}}</h5>
+	</div>
+		<div class="col form-group">
+			<label>Phone Number</label>
+		  	<input type="tel" class="form-control" required name="number" placeholder="Enter your Phone number">
+		</div> <!-- form-group end.// -->
+	</div> <!-- form-group end.// -->
+
+	<div class="form-group">
+			<label class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" required name="gender" value="Male">
+		  <span class="form-check-label"> Male </span>
+		</label>
+		<label class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" name="gender" value="option2">
+		  <span class="form-check-label"> Female</span>
+		</label>
+		<label class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" name="gender" value="Others">
+		  <span class="form-check-label"> Others</span>
+		</label>
+	</div> <!-- form-group end.// -->
+	<div class="form-row">
+		<div class="form-group col-md-6">
+		  <label>City</label>
+		  <input type="text" name="city" required class="form-control">
+		</div> <!-- form-group end.// -->
+		<div class="form-group col-md-6">
+		  <label>Country</label>
+		  <select id="inputState" name="country" required class="form-control">
+		    <option value="none"> Choose...</option>
+		      <option value="Uzbekistan">Uzbekistan</option>
+		      <option value="Russia">Russia</option>
+		      <option value="United States">United States</option>
+		      <option value="India" selected="">India</option>
+		      <option value="Afganistan">Afganistan</option>
+		  </select>
+		</div> <!-- form-group end.// -->
+	</div> <!-- form-row.// -->
+	<div class="form-group">
+		<label>Create password</label>
+	    <input class="form-control" minlength="5" required name="Password" type="password">
+	</div> <!-- form-group end.// -->
+    <div class="form-group">
+        <button type="submit" class=" btn-primary btn-block"> Register  </button>
+    </div> <!-- form-group// -->
+
+</form>
+</article> <!-- card-body end .// -->
+
+</div> <!-- col.//-->
+
+</div> <!-- row.//-->
+
+
+</div>
+	</div>
+</div>
+</div>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</div>
+</body>
+</html>
